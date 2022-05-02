@@ -1,0 +1,482 @@
+VERSION 5.00
+Begin {C62A69F0-16DC-11CE-9E98-00AA00574A4F} GEYAB 
+   Caption         =   "UserForm1"
+   ClientHeight    =   11436
+   ClientLeft      =   108
+   ClientTop       =   456
+   ClientWidth     =   21780
+   OleObjectBlob   =   "GEYAB.frx":0000
+   StartUpPosition =   1  'CenterOwner
+End
+Attribute VB_Name = "GEYAB"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Private Sub CommandButton1_Click()
+
+End Sub
+
+Private Sub ComboBox57_Change()
+
+End Sub
+
+Private Sub ComboBox214_Change()
+
+End Sub
+
+Private Sub cmdsearch_Click()
+
+product = txtsearch.Text
+
+lastrow = Worksheets("Sheet1").Cells(Rows.Count).End(xlUp).Row
+For i = 2 To lastrow
+If Worksheets("Sheet1").Value = product Then
+ 
+NameT.Text = Worksheets("Sheet1").Cells(i, 1).Value
+End If
+Next
+
+End Sub
+
+Private Sub CommandButton4_Click()
+Dim iExit As VbMsgBoxResult
+iExit = MsgBox("Conferm if you want Exit", vbQuestion + vbYesNo, "Employee Managment")
+If iExit = vbYes Then
+Unload Me
+End If
+
+End Sub
+
+Private Sub CommandButton6_Click()
+Dim wks As Worksheet
+Dim Addnew  As Range
+Set wks = Sheet1
+Set Addnew = wks.Range("A65356").End(xlUp).Offset(1, 0)
+
+Addnew.Offset(0, 0).Value = NameT.Text
+Addnew.Offset(0, 1).Value = Position.Text
+Addnew.Offset(0, 2).Value = Salary.Text
+Addnew.Offset(0, 3).Value = c1.Text
+Addnew.Offset(0, 4).Value = c2.Text
+Addnew.Offset(0, 5).Value = c3.Text
+Addnew.Offset(0, 6).Value = c4.Text
+Addnew.Offset(0, 7).Value = c5.Text
+Addnew.Offset(0, 8).Value = c6.Text
+Addnew.Offset(0, 9).Value = c7.Text
+Addnew.Offset(0, 10).Value = c8.Text
+Addnew.Offset(0, 11).Value = c9.Text
+Addnew.Offset(0, 12).Value = c10.Text
+Addnew.Offset(0, 13).Value = c11.Text
+Addnew.Offset(0, 14).Value = c12.Text
+Addnew.Offset(0, 15).Value = c13.Text
+Addnew.Offset(0, 16).Value = c14.Text
+Addnew.Offset(0, 17).Value = c15.Text
+Addnew.Offset(0, 18).Value = c16.Text
+Addnew.Offset(0, 19).Value = c17.Text
+Addnew.Offset(0, 20).Value = c18.Text
+Addnew.Offset(0, 21).Value = c19.Text
+Addnew.Offset(0, 22).Value = c20.Text
+Addnew.Offset(0, 23).Value = c21.Text
+Addnew.Offset(0, 24).Value = c22.Text
+Addnew.Offset(0, 25).Value = c23.Text
+Addnew.Offset(0, 26).Value = c24.Text
+Addnew.Offset(0, 27).Value = c25.Text
+Addnew.Offset(0, 28).Value = c26.Text
+Addnew.Offset(0, 29).Value = c27.Text
+Addnew.Offset(0, 30).Value = c28.Text
+Addnew.Offset(0, 31).Value = c29.Text
+Addnew.Offset(0, 32).Value = c30.Text
+Addnew.Offset(0, 33).Value = c31.Text
+Addnew.Offset(0, 41).Value = Extra.Text
+Addnew.Offset(0, 42).Value = house.Text
+Addnew.Offset(0, 43).Value = trans.Text
+Addnew.Offset(0, 44).Value = padl.Text
+Addnew.Offset(0, 45).Value = mkafaa.Text
+Addnew.Offset(0, 50).Value = SALF.Text
+End Sub
+
+Private Sub CommandButton7_Click()
+
+End Sub
+
+Private Sub DeleteBut_Click()
+Dim i As Integer
+For i = 1 To Range("A65356").End(xlUp).Row - 1
+If LstDisplay.Selected(i) Then
+    Rows(i + 1).Select
+    Selection.Delete
+    End If
+    Next i
+    
+End Sub
+
+Private Sub EditBut_Click()
+Dim answer
+answer = MsgBox("Conferm Update ?", vbYesNo + vbQuestion, "Updadte Record")
+If answer = vbYes Then
+Cells(updateRow, 1) = NameT.Text
+End If
+
+
+
+
+
+End Sub
+
+Private Sub Frame1_Click()
+
+End Sub
+
+Private Sub Frame3_Click()
+
+End Sub
+
+Private Sub Frame5_Click()
+
+End Sub
+
+Private Sub Frame7_Click()
+
+End Sub
+
+Private Sub Frame8_Click()
+
+End Sub
+
+Private Sub Label175_Click()
+
+End Sub
+
+
+Private Sub LstDisplay_DblClick(ByVal Cancel As MSForms.ReturnBoolean)
+    txtsearch.Text = LstDisplay.Column(0)
+    If txtsearch.Text = LstDisplay.Column(0) Then
+    Salary.Text = Me.LstDisplay.Column(3)
+    End If
+    
+    
+
+
+End Sub
+
+Private Sub NameT_Change()
+
+End Sub
+
+Private Sub Position_Change()
+
+End Sub
+
+Private Sub ResetBUT_Click()
+NameT.Text = ""
+Position.Text = ""
+Salary.Text = ""
+c1.Tec1.Text = ""
+c2.Text = ""
+c3.Text = ""
+c4.Text = ""
+c5.Text = ""
+c6.Text = ""
+c7.Text = ""
+c8.Text = ""
+c9.Text = ""
+c10.Text = ""
+c11.Text = ""
+c12.Text = ""
+c13.Text = ""
+c14.Text = ""
+c15.Text = ""
+c16.Text = ""
+c17.Text = ""
+c18.Text = ""
+c19.Text = ""
+c20.Text = ""
+c21.Text = ""
+c22.Text = ""
+c23.Text = ""
+c24.Text = ""
+c25.Text = ""
+c26.Text = ""
+c27.Text = ""
+c28.Text = ""
+c29.Text = ""
+c30.Text = ""
+c31.Text = ""
+ 
+
+
+
+
+End Sub
+
+Private Sub Salary_Change()
+
+End Sub
+
+Private Sub txtsearch_Change()
+
+End Sub
+
+Private Sub UserForm_Activate()
+Me.c1.Clear
+Me.c1.AddItem "1"
+Me.c1.AddItem "week End"
+Me.c1.AddItem "permisition"
+Me.c1.AddItem "NO permisition"
+Me.c1.AddItem "Hospital"
+Me.c1.AddItem "year"
+
+Me.c2.Clear
+Me.c2.AddItem "1"
+Me.c2.AddItem "week End"
+Me.c2.AddItem "permisition"
+Me.c2.AddItem "NO permisition"
+Me.c2.AddItem "Hospital"
+Me.c2.AddItem "year"
+
+Me.c3.Clear
+Me.c3.AddItem "1"
+Me.c3.AddItem "week End"
+Me.c3.AddItem "permisition"
+Me.c3.AddItem "NO permisition"
+Me.c3.AddItem "Hospital"
+Me.c3.AddItem "year"
+
+Me.c4.Clear
+Me.c4.AddItem "1"
+Me.c4.AddItem "week End"
+Me.c4.AddItem "permisition"
+Me.c4.AddItem "NO permisition"
+Me.c4.AddItem "Hospital"
+Me.c4.AddItem "year"
+
+Me.c5.Clear
+Me.c5.AddItem "1"
+Me.c5.AddItem "week End"
+Me.c5.AddItem "permisition"
+Me.c5.AddItem "NO permisition"
+Me.c5.AddItem "Hospital"
+Me.c5.AddItem "year"
+
+Me.c6.Clear
+Me.c6.AddItem "1"
+Me.c6.AddItem "week End"
+Me.c6.AddItem "permisition"
+Me.c6.AddItem "NO permisition"
+Me.c6.AddItem "Hospital"
+Me.c6.AddItem "year"
+
+Me.c7.Clear
+Me.c7.AddItem "1"
+Me.c7.AddItem "week End"
+Me.c7.AddItem "permisition"
+Me.c7.AddItem "NO permisition"
+Me.c7.AddItem "Hospital"
+Me.c7.AddItem "year"
+
+Me.c8.Clear
+Me.c8.AddItem "1"
+Me.c8.AddItem "week End"
+Me.c8.AddItem "permisition"
+Me.c8.AddItem "NO permisition"
+Me.c8.AddItem "Hospital"
+Me.c8.AddItem "year"
+
+Me.c9.Clear
+Me.c9.AddItem "1"
+Me.c9.AddItem "week End"
+Me.c9.AddItem "permisition"
+Me.c9.AddItem "NO permisition"
+Me.c9.AddItem "Hospital"
+Me.c9.AddItem "year"
+
+Me.c10.Clear
+Me.c10.AddItem "1"
+Me.c10.AddItem "week End"
+Me.c10.AddItem "permisition"
+Me.c10.AddItem "NO permisition"
+Me.c10.AddItem "Hospital"
+Me.c10.AddItem "year"
+
+Me.c11.Clear
+Me.c11.AddItem "1"
+Me.c11.AddItem "week End"
+Me.c11.AddItem "permisition"
+Me.c11.AddItem "NO permisition"
+Me.c11.AddItem "Hospital"
+Me.c11.AddItem "year"
+
+Me.c12.Clear
+Me.c12.AddItem "1"
+Me.c12.AddItem "week End"
+Me.c12.AddItem "permisition"
+Me.c12.AddItem "NO permisition"
+Me.c12.AddItem "Hospital"
+Me.c12.AddItem "year"
+
+Me.c13.Clear
+Me.c13.AddItem "1"
+Me.c13.AddItem "week End"
+Me.c13.AddItem "permisition"
+Me.c13.AddItem "NO permisition"
+Me.c13.AddItem "Hospital"
+Me.c13.AddItem "year"
+
+Me.c14.Clear
+Me.c14.AddItem "1"
+Me.c14.AddItem "week End"
+Me.c14.AddItem "permisition"
+Me.c14.AddItem "NO permisition"
+Me.c14.AddItem "Hospital"
+Me.c14.AddItem "year"
+
+Me.c15.Clear
+Me.c15.AddItem "1"
+Me.c15.AddItem "week End"
+Me.c15.AddItem "permisition"
+Me.c15.AddItem "NO permisition"
+Me.c15.AddItem "Hospital"
+Me.c15.AddItem "year"
+
+Me.c16.Clear
+Me.c16.AddItem "1"
+Me.c16.AddItem "week End"
+Me.c16.AddItem "permisition"
+Me.c16.AddItem "NO permisition"
+Me.c16.AddItem "Hospital"
+Me.c16.AddItem "year"
+
+Me.c17.Clear
+Me.c17.AddItem "1"
+Me.c17.AddItem "week End"
+Me.c17.AddItem "permisition"
+Me.c17.AddItem "NO permisition"
+Me.c17.AddItem "Hospital"
+Me.c17.AddItem "year"
+
+Me.c18.Clear
+Me.c18.AddItem "1"
+Me.c18.AddItem "week End"
+Me.c18.AddItem "permisition"
+Me.c18.AddItem "NO permisition"
+Me.c18.AddItem "Hospital"
+Me.c18.AddItem "year"
+
+Me.c19.Clear
+Me.c19.AddItem "1"
+Me.c19.AddItem "week End"
+Me.c19.AddItem "permisition"
+Me.c19.AddItem "NO permisition"
+Me.c19.AddItem "Hospital"
+Me.c19.AddItem "year"
+
+Me.c20.Clear
+Me.c20.AddItem "1"
+Me.c20.AddItem "week End"
+Me.c20.AddItem "permisition"
+Me.c20.AddItem "NO permisition"
+Me.c20.AddItem "Hospital"
+Me.c20.AddItem "year"
+
+Me.c21.Clear
+Me.c21.AddItem "1"
+Me.c21.AddItem "week End"
+Me.c21.AddItem "permisition"
+Me.c21.AddItem "NO permisition"
+Me.c21.AddItem "Hospital"
+Me.c21.AddItem "year"
+
+Me.c22.Clear
+Me.c22.AddItem "1"
+Me.c22.AddItem "week End"
+Me.c22.AddItem "permisition"
+Me.c22.AddItem "NO permisition"
+Me.c22.AddItem "Hospital"
+Me.c22.AddItem "year"
+
+Me.c23.Clear
+Me.c23.AddItem "1"
+Me.c23.AddItem "week End"
+Me.c23.AddItem "permisition"
+Me.c23.AddItem "NO permisition"
+Me.c23.AddItem "Hospital"
+Me.c23.AddItem "year"
+
+Me.c24.Clear
+Me.c24.AddItem "1"
+Me.c24.AddItem "week End"
+Me.c24.AddItem "permisition"
+Me.c24.AddItem "NO permisition"
+Me.c24.AddItem "Hospital"
+Me.c24.AddItem "year"
+
+Me.c25.Clear
+Me.c25.AddItem "1"
+Me.c25.AddItem "week End"
+Me.c25.AddItem "permisition"
+Me.c25.AddItem "NO permisition"
+Me.c25.AddItem "Hospital"
+Me.c25.AddItem "year"
+
+Me.c26.Clear
+Me.c26.AddItem "1"
+Me.c26.AddItem "week End"
+Me.c26.AddItem "permisition"
+Me.c26.AddItem "NO permisition"
+Me.c26.AddItem "Hospital"
+Me.c26.AddItem "year"
+
+Me.c27.Clear
+Me.c27.AddItem "1"
+Me.c27.AddItem "week End"
+Me.c27.AddItem "permisition"
+Me.c27.AddItem "NO permisition"
+Me.c27.AddItem "Hospital"
+Me.c27.AddItem "year"
+
+Me.c28.Clear
+Me.c28.AddItem "1"
+Me.c28.AddItem "week End"
+Me.c28.AddItem "permisition"
+Me.c28.AddItem "NO permisition"
+Me.c28.AddItem "Hospital"
+Me.c28.AddItem "year"
+
+Me.c29.Clear
+Me.c29.AddItem "1"
+Me.c29.AddItem "week End"
+Me.c29.AddItem "permisition"
+Me.c29.AddItem "NO permisition"
+Me.c29.AddItem "Hospital"
+Me.c29.AddItem "year"
+
+
+Me.c30.Clear
+Me.c30.AddItem "1"
+Me.c30.AddItem "week End"
+Me.c30.AddItem "permisition"
+Me.c30.AddItem "NO permisition"
+Me.c30.AddItem "Hospital"
+Me.c30.AddItem "year"
+
+Me.c31.Clear
+Me.c31.AddItem "1"
+Me.c31.AddItem "week End"
+Me.c31.AddItem "permisition"
+Me.c31.AddItem "NO permisition"
+Me.c31.AddItem "Hospital"
+Me.c31.AddItem "year"
+
+
+End Sub
+
+Private Sub UserForm_Click()
+
+End Sub
+
+Private Sub UserForm_Initialize()
+LstDisplay.ColumnCount = 60
+LstDisplay.RowSource = ("A1:BA65356")
+End Sub
+
